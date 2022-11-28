@@ -14,3 +14,12 @@ function createGrid (){
     getRandom()
 }
 createGrid()
+
+function getRandom() {
+    let randomSquare = Math.floor(Math.random() * tiles.length)
+    if (tiles[randomSquare].innerHTML == 0){
+        tiles[randomSquare].innerHTML = 2
+    } else {
+        getRandom()
+    }
+}
