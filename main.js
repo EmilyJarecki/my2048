@@ -34,6 +34,10 @@ function moveRight(){
             let row4 = tiles[i+3].innerHTML// i+3 = tiles[3] tiles[7] tiles [11] tiles[15]
             let rows = [Number(row1), Number(row2), Number(row3), Number(row4)]
             console.log(rows)
+            const filtered = rows.filter(num => num !== 0)
+            console.log(filtered)
+            const zeros = rows.filter(num => num === 0)
+            console.log(zeros)
         }
     }
 }
