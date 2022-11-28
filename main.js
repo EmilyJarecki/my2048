@@ -7,22 +7,23 @@ function createGrid (){
         let square = document.createElement("div")
         square.className = "numBox"
         square.id = i
-        square.innerHTML = 0
+        square.innerHTML = i
         gameBoard.appendChild(square)
         tiles.push(square)
     }
-    getRandom()
+    // getRandom()
 }
 createGrid()
 
-function getRandom() {
-    let randomSquare = Math.floor(Math.random() * tiles.length)
-    if (tiles[randomSquare].innerHTML == 0){
-        tiles[randomSquare].innerHTML = 2
-    } else {
-        getRandom()
-    }
-}
+// function getRandom() {
+//     let randomSquare = Math.floor(Math.random() * tiles.length)
+//     if (tiles[randomSquare].innerHTML == 0){
+//         tiles[randomSquare].innerHTML = 2
+//     } else {
+//         getRandom()
+//     }
+//     console.log(randomSquare)
+// }
 
 // moveRight()
 function moveRight(){
@@ -33,26 +34,26 @@ function moveRight(){
             let row3 = tiles[i+2].innerHTML// i+2 = tiles[2] tiles[6] tiles [10] tiles[14]
             let row4 = tiles[i+3].innerHTML// i+3 = tiles[3] tiles[7] tiles [11] tiles[15]
             let rows = [Number(row1), Number(row2), Number(row3), Number(row4)]
-            // console.log(rows)
-            const filtered = rows.filter(num => num !== 0)
-            // console.log(filtered)
-            const zeros = rows.filter(num => num === 0)
-            // console.log(zeros)
-            const concatted = new Array(...zeros, ...filtered)
-            console.log(concatted)
+            
+            const filteredRow = rows.filter(num => num !== 0)
+            const rowZeros = rows.filter(num => num === 0)
+            const concattedRow = new Array(...rowZeros, ...filteredRow)
+            
+            console.log(concattedRow)
         }
     }
 }
 moveDown()
 function moveDown(){
     for (let i = 0; i < width; i++){
-        if (i==i){
-            col1 = tiles[i*4].innerHTML
-            col2 = tiles[(i * 4) + 1].innerHTML
-            col3 = tiles[(i * 4) + 2].innerHTML
-            col4 = tiles[(i * 4) + 3].innerHTML
-            let cols = [Number(col1), Number(col2), Number(col3), Number(col4)]
-            console.log(cols)
-        } 
+        let col1 = tiles[i].innerHTML                //i = 0     tiles[0] tiles[1] tiles[2] tiles[3]
+        let col2 = tiles[i + width].innerHTML        //i = 1+4   tiles[4] tiles[5] tiles[6] tiles[7]
+        let col3 = tiles[i + (2 * width)].innerHTML  //i = 2+8   tiles[8] tiles[9] tiles[10] tiles[11]
+        let col4 = tiles[i + (3 * width)].innerHTML  //i = 3+12  tiles[12]tiles[13]tiles[14] tiles[15]
+        let cols = [Number(col1), Number(col2), Number(col3), Number(col4)] //?? explanation
+        const filteredCol = cols.filter(num => num !== 0)
+        const colZeros = cols.filter(num => num  === 0)
+        const concattedCol = new Array(...colZeros, ...filteredCol)
+        console.log(concattedCol)
     }
 }
