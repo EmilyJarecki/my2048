@@ -24,7 +24,7 @@ function getRandom() {
     }
 }
 
-moveRight()
+// moveRight()
 function moveRight(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -41,5 +41,18 @@ function moveRight(){
             const concatted = new Array(...zeros, ...filtered)
             console.log(concatted)
         }
+    }
+}
+moveDown()
+function moveDown(){
+    for (let i = 0; i < width; i++){
+        if (i==i){
+            col1 = tiles[i*4].innerHTML
+            col2 = tiles[(i * 4) + 1].innerHTML
+            col3 = tiles[(i * 4) + 2].innerHTML
+            col4 = tiles[(i * 4) + 3].innerHTML
+            let cols = [Number(col1), Number(col2), Number(col3), Number(col4)]
+            console.log(cols)
+        } 
     }
 }
