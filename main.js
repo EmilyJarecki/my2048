@@ -33,11 +33,13 @@ function moveRight(){
             let row3 = tiles[i+2].innerHTML// i+2 = tiles[2] tiles[6] tiles [10] tiles[14]
             let row4 = tiles[i+3].innerHTML// i+3 = tiles[3] tiles[7] tiles [11] tiles[15]
             let rows = [Number(row1), Number(row2), Number(row3), Number(row4)]
-            console.log(rows)
+            // console.log(rows)
             const filtered = rows.filter(num => num !== 0)
-            console.log(filtered)
+            // console.log(filtered)
             const zeros = rows.filter(num => num === 0)
-            console.log(zeros)
+            // console.log(zeros)
+            const concatted = new Array(...zeros, ...filtered)
+            console.log(concatted)
         }
     }
 }
