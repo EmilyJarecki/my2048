@@ -2,6 +2,22 @@ const tiles = []
 const width = 4
 const gameBoard = document.getElementById("game_board")
 
+//keycodes:
+//left=37
+//up=38
+//right=39
+//down=40
+
+window.addEventListener('keydown', (event)=>{
+    if (event.key === "ArrowLeft"){
+        moveLeft()
+    } else if (event.key === "ArrowRight"){
+        moveRight()
+    }else{
+        console.log("I need help")
+    }
+})
+
 function createGrid (){
     for(let i = 0; i < width * width; i++){
         let square = document.createElement("div")
@@ -25,7 +41,6 @@ function getRandom() {
     console.log(randomSquare)
 }
 
-// moveRight()
 function moveRight(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -43,7 +58,7 @@ function moveRight(){
         }
     }
 }
-moveLeft()
+
 function moveLeft(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -63,27 +78,23 @@ function moveLeft(){
 }
 
 
+function moveDown(){
+    for (let i = 0; i < width; i++){
+        if (i==i){
+            let col1 = tiles[i].innerHTML                //i = 0     tiles[0] tiles[1] tiles[2] tiles[3]
+            let col2 = tiles[i + width].innerHTML        //i = 1+4   tiles[4] tiles[5] tiles[6] tiles[7]
+            let col3 = tiles[i + (2 * width)].innerHTML  //i = 2+8   tiles[8] tiles[9] tiles[10] tiles[11]
+            let col4 = tiles[i + (3 * width)].innerHTML  //i = 3+12  tiles[12]tiles[13]tiles[14] tiles[15]
+            let cols = [Number(col1), Number(col2), Number(col3), Number(col4)]
 
-
-
-// moveDown()
-// function moveDown(){
-//     for (let i = 0; i < width; i++){
-//         if (i==i){
-//             let col1 = tiles[i].innerHTML                //i = 0     tiles[0] tiles[1] tiles[2] tiles[3]
-//             let col2 = tiles[i + width].innerHTML        //i = 1+4   tiles[4] tiles[5] tiles[6] tiles[7]
-//             let col3 = tiles[i + (2 * width)].innerHTML  //i = 2+8   tiles[8] tiles[9] tiles[10] tiles[11]
-//             let col4 = tiles[i + (3 * width)].innerHTML  //i = 3+12  tiles[12]tiles[13]tiles[14] tiles[]
-//             let cols = [Number(col1), Number(col2), Number(col3), Number(col4)]
+            const filteredCol = cols.filter(num => num !== 0)
+            const colZeros = cols.filter(num => num  === 0)
+            const concattedCol = new Array(...colZeros, ...filteredCol)
             
-//             const filteredCol = cols.filter(num => num !== 0)
-//             const colZeros = cols.filter(num => num  === 0)
-//             const concattedCol = new Array(...colZeros, ...filteredCol)
-            
-//             console.log(concattedCol)
-//         } 
-//     }
-// }
+            console.log(concattedCol)
+        } 
+    }
+}
 // function moveUp(){
 //     for (let i = 0; i < width; i++){
 //         if (i==i){
