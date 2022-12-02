@@ -2,11 +2,6 @@ const tiles = []
 const width = 4
 const gameBoard = document.getElementById("game_board")
 
-//keycodes:
-//left=37
-//up=38
-//right=39
-//down=40
 
 window.addEventListener('keydown', (event)=>{
     if (event.key === "ArrowLeft"){
@@ -23,7 +18,7 @@ function createGrid (){
         let square = document.createElement("div")
         square.className = "numBox"
         square.id = i
-        square.innerHTML = 0
+        square.value = 0
         gameBoard.appendChild(square)
         tiles.push(square)
     }
@@ -40,7 +35,7 @@ function getRandom() {
     }
     console.log(randomSquare)
 }
-
+moveRight()
 function moveRight(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
