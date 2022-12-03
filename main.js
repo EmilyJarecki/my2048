@@ -23,6 +23,8 @@ function createGrid (){
         tiles.push(square)
     }
     getRandom()
+    getRandom()
+    getRandom()
 }
 createGrid()
 
@@ -34,8 +36,8 @@ function getRandom() {
         getRandom()
     }
     console.log(randomSquare)
+    
 }
-moveRight()
 function moveRight(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -43,17 +45,26 @@ function moveRight(){
             let row2 = tiles[i+1].innerHTML// i+1 = tiles[1] tiles[5] tiles [9] tiles[13]
             let row3 = tiles[i+2].innerHTML// i+2 = tiles[2] tiles[6] tiles [10] tiles[14]
             let row4 = tiles[i+3].innerHTML// i+3 = tiles[3] tiles[7] tiles [11] tiles[15]
-            let rows = [Number(row1), Number(row2), Number(row3), Number(row4)]
-            
+            let rows = [
+                Number(row1), 
+                Number(row2), 
+                Number(row3), 
+                Number(row4)]
+
+            // console.log(rows)
             const filteredRow = rows.filter(num => num !== 0)
             const rowZeros = rows.filter(num => num === 0)
             const concattedRow = new Array(...rowZeros, ...filteredRow)
-            
-            console.log(concattedRow)
+
+            tiles[i].innerHTML = concattedRow[0]
+            tiles[i+1].innerHTML = concattedRow[1]
+            tiles[i+2].innerHTML = concattedRow[2]
+            tiles[i+3].innerHTML = concattedRow[3]
+
         }
     }
 }
-
+moveLeft()
 function moveLeft(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -65,9 +76,13 @@ function moveLeft(){
             
             const filteredRow = rows.filter(num => num !== 0)
             const rowZeros = rows.filter(num => num === 0)
-            const concattedRow = new Array(...filteredRow, ...rowZeros)
-            
+            const concattedRow = new Array(...filteredRow, ...rowZeros)            
             console.log(concattedRow)
+
+            tiles[i].innerHTML = concattedRow[0]
+            tiles[i+1].innerHTML = concattedRow[1]
+            tiles[i+2].innerHTML = concattedRow[2]
+            tiles[i+3].innerHTML = concattedRow[3]
         }
     }
 }
