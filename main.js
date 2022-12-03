@@ -2,15 +2,14 @@ const tiles = []
 const width = 4
 const gameBoard = document.getElementById("game_board")
 
-
 window.addEventListener('keydown', (event)=>{
+    getRandom()
     if (event.key === "ArrowLeft"){
         moveLeft()
     } else if (event.key === "ArrowRight"){
         moveRight()
     }else if (event.key === "ArrowUp"){
         moveUp()
-        console.log("I'm moving up")
     }else if (event.key === "ArrowDown"){
         moveDown()
     }else{
@@ -40,7 +39,6 @@ function getRandom() {
     } else {
         getRandom()
     }
-    console.log(randomSquare)
     
 }
 function moveRight(){
@@ -56,10 +54,9 @@ function moveRight(){
                 Number(row3), 
                 Number(row4)]
 
-            // console.log(rows)
-            const filteredRow = rows.filter(num => num !== 0)
+            const filtered = rows.filter(num => num !== 0)
             const rowZeros = rows.filter(num => num === 0)
-            const concattedRow = new Array(...rowZeros, ...filteredRow)
+            const concattedRow = new Array(...rowZeros, ...filtered)
 
             tiles[i].innerHTML = concattedRow[0]
             tiles[i+1].innerHTML = concattedRow[1]
@@ -83,10 +80,9 @@ function moveLeft(){
                 Number(row3), 
                 Number(row4)]
             
-            const filteredRow = rows.filter(num => num !== 0)
+            const filtered = rows.filter(num => num !== 0)
             const rowZeros = rows.filter(num => num === 0)
-            const concattedRow = new Array(...filteredRow, ...rowZeros)            
-            console.log(concattedRow)
+            const concattedRow = new Array(...filtered, ...rowZeros)            
 
             tiles[i].innerHTML = concattedRow[0]
             tiles[i+1].innerHTML = concattedRow[1]
@@ -109,9 +105,9 @@ function moveUp(){
                 Number(col3), 
                 Number(col4)]
 
-            const filteredCol = cols.filter(num => num !== 0)
+            const filtered = cols.filter(num => num !== 0)
             const colZeros = cols.filter(num => num  === 0)
-            const concattedCol = new Array(...filteredCol, ...colZeros)
+            const concattedCol = new Array(...filtered, ...colZeros)
             
             tiles[i].innerHTML = concattedCol[0]
             tiles[i + width].innerHTML = concattedCol[1]
@@ -127,12 +123,16 @@ function moveDown(){
             col2 = tiles[i + width].innerHTML
             col3 = tiles[i + (width * 2)].innerHTML
             col4 = tiles[i + (width * 3)].innerHTML
-            let cols = [Number(col1), Number(col2), Number(col3), Number(col4)]
+            let cols = [
+                Number(col1), 
+                Number(col2), 
+                Number(col3), 
+                Number(col4)]
 
-            const filteredCol = cols.filter(num => num !== 0)
+            const filtered = cols.filter(num => num !== 0)
             const colZeros = cols.filter(num => num  === 0)
 
-            const concattedCol = new Array(...colZeros, ...filteredCol)
+            const concattedCol = new Array(...colZeros, ...filtered)
             tiles[i].innerHTML = concattedCol[0]
             tiles[i + width].innerHTML = concattedCol[1]
             tiles[i + (width * 2)].innerHTML = concattedCol[2]
@@ -141,3 +141,8 @@ function moveDown(){
 
     }
 }
+// function merge(){
+//     for (let i=0; i<width; i++){
+//         if 
+//     }
+// }
