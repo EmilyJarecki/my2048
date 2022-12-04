@@ -3,7 +3,7 @@ const width = 4
 const gameBoard = document.getElementById("game_board")
 
 window.addEventListener('keydown', (event)=>{
-    // getRandom()  
+    getRandom()  
     // <-this will add a ranodm number every move but commented out for my sanity
     if (event.key === "ArrowLeft"){
         moveLeft()
@@ -63,11 +63,17 @@ function moveRight(){
             tiles[i+1].innerHTML = concattedRow[1]
             tiles[i+2].innerHTML = concattedRow[2]
             tiles[i+3].innerHTML = concattedRow[3]
+            //TODO fix this (mirror?)
+            if (tiles[i+3].innerHTML===tiles[i+2].innerHTML){
+                let newTiles = tiles[i+3].innerHTML*=2
+                tiles[i+3].innerHTML = newTiles
+                tiles[i+2].innerHTML= 0
+            }
 
         }
     }
 }
-
+moveLeft()
 function moveLeft(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
@@ -85,22 +91,46 @@ function moveLeft(){
             const filtered = rows.filter(num => num !== 0)
             const rowZeros = rows.filter(num => num === 0)
             const concattedRow = new Array(...filtered, ...rowZeros)            
-
+            //this is pushing tile info into array at line 1, in the global scopt so it's accessible by other functions
             tiles[i].innerHTML = concattedRow[0]
             tiles[i+1].innerHTML = concattedRow[1]
             tiles[i+2].innerHTML = concattedRow[2]
             tiles[i+3].innerHTML = concattedRow[3]
             console.log(concattedRow[0])
 
-            if (tiles[i].innerHTML===tiles[i+1].innerHTML){
-                let newTiles = tiles[i].innerHTML*=2
-                tiles[i].innerHTML = newTiles
-                tiles[i+1].innerHTML= 0
-            }
+            combineRow()
+            // console.log(tiles)
+        //TODO this is the part that multiplies 
+            // if (tiles[i].innerHTML===tiles[i+1].innerHTML){
+            //     let newTiles = tiles[i].innerHTML*=2
+            //     tiles[i].innerHTML = newTiles
+            //     tiles[i+1].innerHTML= 0
+            // } else if (tiles[i+1].innerHTML===tiles[i+2].innerHTML){
+            //     let newTiles = tiles[i+1].innerHTML*=2
+            //     tiles[i+1].innerHTML = newTiles
+            //     tiles[i+2].innerHTML= 0
+            // } else if (tiles[i+2].innerHTML===tiles[i+3].innerHTML){
+            //     let newTiles = tiles[i+2].innerHTML*=2
+            //     tiles[i+2].innerHTML = newTiles
+            //     tiles[i+3].innerHTML= 0
+            // }else{
+            //     break
+            // }
+
+
         }
     }
 }
 
+function combineRow(){
+    for(let i=0; i < (width*width)-1; i++){
+        if (tiles[i].innerHTML===tiles[i+1].innerHTML){
+            let newTiles = tiles[i].innerHTML*=2
+            tiles[i].innerHTML = newTiles
+            tiles[i+1].innerHTML= 0
+        }
+    }
+}
 
 function moveUp(){
     for (let i = 0; i < width; i++){
