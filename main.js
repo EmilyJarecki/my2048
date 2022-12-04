@@ -3,18 +3,27 @@ const width = 4
 const gameBoard = document.getElementById("game_board")
 
 window.addEventListener('keydown', (event)=>{
-    getRandom()  
     // <-this will add a ranodm number every move but commented out for my sanity
     if (event.key === "ArrowLeft"){
         moveLeft()
+        combineRow()
+        moveLeft()
+        getRandom()
     } else if (event.key === "ArrowRight"){
         moveRight()
+        combineRow()
+        moveRight()
+        getRandom()
     }else if (event.key === "ArrowUp"){
         moveUp()
+        combineCol()
+        moveUp()
+        getRandom()
     }else if (event.key === "ArrowDown"){
         moveDown()
-    }else{
-        console.log("I need help")
+        combineCol()
+        moveDown()
+        getRandom()
     }
 })
 
@@ -63,22 +72,16 @@ function moveRight(){
             tiles[i+1].innerHTML = concattedRow[1]
             tiles[i+2].innerHTML = concattedRow[2]
             tiles[i+3].innerHTML = concattedRow[3]
-            //TODO fix this (mirror?)
-            if (tiles[i+3].innerHTML===tiles[i+2].innerHTML){
-                let newTiles = tiles[i+3].innerHTML*=2
-                tiles[i+3].innerHTML = newTiles
-                tiles[i+2].innerHTML= 0
-            }
-
         }
     }
 }
-moveLeft()
+
+
 function moveLeft(){
     for (let i = 0; i < width * width; i++){
         if (i % 4 === 0) {
             let row1 = tiles[i].innerHTML      //i= tiles[0] tiles[4] tiles [8] tiles[12]     (the start of the row and column 1)
-            console.log(row1[0])
+            // console.log(row1[0])
             let row2 = tiles[i+1].innerHTML// i+1 = tiles[1] tiles[5] tiles [9] tiles[13]
             // console.log(row2[0])
             let row3 = tiles[i+2].innerHTML// i+2 = tiles[2] tiles[6] tiles [10] tiles[14]
@@ -96,28 +99,7 @@ function moveLeft(){
             tiles[i+1].innerHTML = concattedRow[1]
             tiles[i+2].innerHTML = concattedRow[2]
             tiles[i+3].innerHTML = concattedRow[3]
-            console.log(concattedRow[0])
-
-            combineRow()
-            // console.log(tiles)
-        //TODO this is the part that multiplies 
-            // if (tiles[i].innerHTML===tiles[i+1].innerHTML){
-            //     let newTiles = tiles[i].innerHTML*=2
-            //     tiles[i].innerHTML = newTiles
-            //     tiles[i+1].innerHTML= 0
-            // } else if (tiles[i+1].innerHTML===tiles[i+2].innerHTML){
-            //     let newTiles = tiles[i+1].innerHTML*=2
-            //     tiles[i+1].innerHTML = newTiles
-            //     tiles[i+2].innerHTML= 0
-            // } else if (tiles[i+2].innerHTML===tiles[i+3].innerHTML){
-            //     let newTiles = tiles[i+2].innerHTML*=2
-            //     tiles[i+2].innerHTML = newTiles
-            //     tiles[i+3].innerHTML= 0
-            // }else{
-            //     break
-            // }
-
-
+            // console.log(concattedRow[0])
         }
     }
 }
@@ -178,11 +160,14 @@ function moveDown(){
             tiles[i + (width * 2)].innerHTML = concattedCol[2]
             tiles[i + (width * 3)].innerHTML = concattedCol[3]
         } 
-
     }
 }
-// function merge(){
-//     for (let i=0; i<width; i++){
-//         if 
-//     }
-// }
+function combineCol(){
+    for(let i=0; i < (width*width)-4; i++){
+        if (tiles[i].innerHTML===tiles[i+width].innerHTML){
+            let newTilesCol = Number(tiles[i].innerHTML)+Number(tiles[i+width].innerHTML)
+            tiles[i].innerHTML = newTilesCol
+            tiles[i+width].innerHTML= 0
+        }
+    }
+}
