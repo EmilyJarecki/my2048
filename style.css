@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #120c48;
+    letter-spacing: 5px;
+    color: #fee;   
+}
+
+hr {
+    width: 500px;
+}
+
+#board {
+    width: 380px;
+    height: 380px;
+
+    /* background-color: #cdc1b5; */
+    /* border: 6px solid #0fe742; */
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    width: 90px;
+    height: 90px;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 0.2rem #bc13fe,
+            0 0 0.2rem #bc13fe,
+            inset 0rem 0rem 0.7rem white; 
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
+/* colored tiles */
+
+.x2 {
+    background-color: #eee4da;
+    color: #727371;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .5rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 0.5rem #bc13fe,
+            0 0 0.5rem #bc13fe,
+            inset 0rem 0rem 1rem blue; 
+}
+
+.x4 {
+    background-color: #ece0ca;
+    color: #727371;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .8rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            inset 0rem 0rem 1rem blue; 
+}
+
+.x8 {
+    background-color: #f4b17a;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.1rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.1rem #bc13fe,
+            0 0 1.1rem #bc13fe,
+            inset 0rem 0rem 1.5rem blue; 
+}
+
+.x16{
+    background-color: #f59575;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.4rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.4rem #bc13fe,
+            0 0 1.4rem #bc13fe,
+            inset 0rem 0rem 2rem blue; 
+}
+
+.x32{
+    background-color: #f57c5f;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.7rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.7rem #bc13fe,
+            0 0 1.7rem #bc13fe,
+            inset 0rem 0rem 2.5rem blue; 
+}
+
+.x64{
+    background-color: #f65d3b;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.2rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            inset 0rem 0rem 3rem blue; 
+}
+
+.x128{
+    background-color: #edce71;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.2rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            inset 0rem 0rem 3.5rem blue; 
+}
+
+.x256{
+    background-color: #edcc63;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+            0 0 1.2rem #fff,
+            0 0 0rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            0 0 1.2rem #bc13fe,
+            inset 0rem 0rem 4rem blue; 
+}
+
+.x512{
+    background-color: #edc651;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 1.2rem #fff,
+    0 0 0rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    inset 0rem 0rem 4.5rem blue; 
+}
+
+.x1024{
+    background-color: #eec744;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 1.2rem #fff,
+    0 0 0rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    inset 0rem 0rem 5rem blue; 
+}
+
+.x2048{
+    background-color: #ecc230;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 1.2rem #fff,
+    0 0 0rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    inset 0rem 0rem 5.5rem blue; 
+}
+
+.x4096 {
+    background-color: #fe3d3d;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 1.2rem #fff,
+    0 0 0rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    inset 0rem 0rem 6rem blue; 
+}
+
+.x8192 {
+    background-color: #ff2020;
+    color: white;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 1.2rem #fff,
+    0 0 0rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    0 0 1.2rem #bc13fe,
+    inset 0rem 0rem 6.5rem blue; 
+}
