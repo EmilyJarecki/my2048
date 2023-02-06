@@ -116,7 +116,7 @@ hr {
 }
 
 .x256{
-    background-color: #edcc63;
+    background-color: #da6913;
     color: white;
     box-shadow: 0 0 .2rem #fff,
             0 0 1.2rem #fff,
@@ -127,7 +127,7 @@ hr {
 }
 
 .x512{
-    background-color: #edc651;
+    background-color: #4a6cea;
     color: white;
     box-shadow: 0 0 .2rem #fff,
     0 0 1.2rem #fff,
@@ -149,7 +149,7 @@ hr {
 }
 
 .x2048{
-    background-color: #ecc230;
+    background-color: #ffffff;
     color: white;
     box-shadow: 0 0 .2rem #fff,
     0 0 1.2rem #fff,
@@ -171,7 +171,7 @@ hr {
 }
 
 .x8192 {
-    background-color: #ff2020;
+    background-color: #9d2dee;
     color: white;
     box-shadow: 0 0 .2rem #fff,
     0 0 1.2rem #fff,

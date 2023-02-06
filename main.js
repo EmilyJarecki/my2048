@@ -71,6 +71,22 @@ function updateTile(tile, num) {
         }                
     }
 }
+document.getElementById("up").addEventListener("click", function(){
+    slideUp();
+    getRandom();
+})
+document.getElementById("left").addEventListener("click", function(){
+    slideLeft();
+    getRandom();
+})
+document.getElementById("right").addEventListener("click", function(){
+    slideRight();
+    getRandom();
+})
+document.getElementById("down").addEventListener("click", function(){
+    slideDown();
+    getRandom();
+})
 
 document.addEventListener('keyup', (event) => {
     if (event.key == "ArrowLeft") {

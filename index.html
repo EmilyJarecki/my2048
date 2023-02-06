@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2048</title>
     <script src="./main.js" defer></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>2048</h1>
-    <hr>
+    <hr />
     <h2>Score: <span id="score">0</span></h2>
-    <div id="board">
+    <button id="up">Up</button>
+    <div>
+      <button id="left">Left</button>
+      <button id="right">Right</button>
     </div>
-</body>
+    <button id="down">Down</button>
+    <div id="board"></div>
+  </body>
 </html>
