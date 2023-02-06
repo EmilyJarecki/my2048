@@ -74,18 +74,22 @@ function updateTile(tile, num) {
 document.getElementById("up").addEventListener("click", function(){
     slideUp();
     getRandom();
+    document.getElementById("score").innerText = score;
 })
 document.getElementById("left").addEventListener("click", function(){
     slideLeft();
     getRandom();
+    document.getElementById("score").innerText = score;
 })
 document.getElementById("right").addEventListener("click", function(){
     slideRight();
     getRandom();
+    document.getElementById("score").innerText = score;
 })
 document.getElementById("down").addEventListener("click", function(){
     slideDown();
     getRandom();
+    document.getElementById("score").innerText = score;
 })
 
 document.addEventListener('keyup', (event) => {
