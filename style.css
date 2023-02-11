@@ -1,9 +1,9 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: #120c48;
+    background-color: white;
     letter-spacing: 5px;
-    color: #fee;   
+    color: black;   
 }
 
 hr {
@@ -21,164 +21,83 @@ hr {
 .tile {
     width: 90px;
     height: 90px;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 .2rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 0.2rem #bc13fe,
-            0 0 0.2rem #bc13fe,
-            inset 0rem 0rem 0.7rem white; 
     font-size: 40px;
     font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    border: 2px solid black;
 }
 
 
 /* colored tiles */
 
 .x2 {
-    background-color: #eee4da;
-    color: #727371;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 .5rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 0.5rem #bc13fe,
-            0 0 0.5rem #bc13fe,
-            inset 0rem 0rem 1rem blue; 
+    background-color: #CAFAFE;
 }
 
 .x4 {
-    background-color: #ece0ca;
-    color: #727371;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 .8rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 0.8rem #bc13fe,
-            0 0 0.8rem #bc13fe,
-            inset 0rem 0rem 1rem blue; 
+    background-color: #FC4445;
+    color: white;
 }
 
 .x8 {
-    background-color: #f4b17a;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.1rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.1rem #bc13fe,
-            0 0 1.1rem #bc13fe,
-            inset 0rem 0rem 1.5rem blue; 
+    background-color: #3FEEE6;
+
 }
 
 .x16{
-    background-color: #f59575;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.4rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.4rem #bc13fe,
-            0 0 1.4rem #bc13fe,
-            inset 0rem 0rem 2rem blue; 
+    background-color: #55BCC9;
+    color: white
+
 }
 
 .x32{
-    background-color: #f57c5f;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.7rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.7rem #bc13fe,
-            0 0 1.7rem #bc13fe,
-            inset 0rem 0rem 2.5rem blue; 
+    background-color: #97CAEF;
+
 }
 
 .x64{
-    background-color: #f65d3b;
+    background-color: #ed127f;
     color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.2rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            inset 0rem 0rem 3rem blue; 
+
 }
 
 .x128{
-    background-color: #edce71;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.2rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            inset 0rem 0rem 3.5rem blue; 
+    background-color: #ffffff;
+    color:  #55BCC9;
+
+
 }
 
 .x256{
-    background-color: #da6913;
+    background-color: #ffb25f;
     color: white;
-    box-shadow: 0 0 .2rem #fff,
-            0 0 1.2rem #fff,
-            0 0 0rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            0 0 1.2rem #bc13fe,
-            inset 0rem 0rem 4rem blue; 
 }
 
 .x512{
-    background-color: #4a6cea;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 1.2rem #fff,
-    0 0 0rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    inset 0rem 0rem 4.5rem blue; 
+    background-color: #009ca2;
+
 }
 
 .x1024{
-    background-color: #eec744;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 1.2rem #fff,
-    0 0 0rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    inset 0rem 0rem 5rem blue; 
+    background-color: #4a6cea;
 }
 
 .x2048{
-    background-color: #ffffff;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 1.2rem #fff,
-    0 0 0rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    inset 0rem 0rem 5.5rem blue; 
+    background-color: white;
+    color: #ed127f;
 }
 
 .x4096 {
-    background-color: #fe3d3d;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 1.2rem #fff,
-    0 0 0rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    inset 0rem 0rem 6rem blue; 
+    background-color: white;
+    color:  #009ca2
 }
 
 .x8192 {
-    background-color: #9d2dee;
-    color: white;
-    box-shadow: 0 0 .2rem #fff,
-    0 0 1.2rem #fff,
-    0 0 0rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    0 0 1.2rem #bc13fe,
-    inset 0rem 0rem 6.5rem blue; 
+ background-color: white;
+ color:  #4a6cea
 }
 
 #up{
