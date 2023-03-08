@@ -1,4 +1,4 @@
-# 2048
+# <a href="https://iridescent-melba-0e8849.netlify.app">2048</a>
 ## Technologies Used:
 <p>
 <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
